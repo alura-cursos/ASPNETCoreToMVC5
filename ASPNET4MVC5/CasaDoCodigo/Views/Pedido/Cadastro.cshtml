@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "Cadastro";
+}
+@model CasaDoCodigo.Models.Cadastro
+
+<h3>Cadastro</h3>
+
+@using (Html.BeginForm("Resumo", "Pedido", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label" for="nomeCliente">Nome do Cliente</label>
+                    @Html.EditorFor(t => t.Nome, new { htmlAttributes = new { @class = "form-control", id = "nomeCliente", placeholder = "Nome do Cliente" } })
+                    @Html.ValidationMessageFor(t => t.Nome, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">Email</label>
+                    @Html.EditorFor(t => t.Email, new { htmlAttributes = new { @class = "form-control", id = "email", placeholder = "Email" } })
+                    @Html.ValidationMessageFor(t => t.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="telefone">Telefone</label>
+                    @Html.EditorFor(t => t.Telefone, new { htmlAttributes = new { @class = "form-control", id = "telefone", placeholder = "Telefone" } })
+                    @Html.ValidationMessageFor(t => t.Telefone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label" for="endereco">Endereço</label>
+                    @Html.EditorFor(t => t.Endereco, new { htmlAttributes = new { @class = "form-control", id = "endereco", placeholder = "Endereço" } })
+                    @Html.ValidationMessageFor(t => t.Endereco, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="complemento">Complemento</label>
+                    @Html.EditorFor(t => t.Complemento, new { htmlAttributes = new { @class = "form-control", id = "complemento", placeholder = "Complemento" } })
+                    @Html.ValidationMessageFor(t => t.Complemento, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="bairro">Bairro</label>
+                    @Html.EditorFor(t => t.Bairro, new { htmlAttributes = new { @class = "form-control", id = "bairro", placeholder = "Bairro" } })
+                    @Html.ValidationMessageFor(t => t.Bairro, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label" for="municipio">Município</label>
+                    @Html.EditorFor(t => t.Municipio, new { htmlAttributes = new { @class = "form-control", id = "municipio", placeholder = "Municipio" } })
+                    @Html.ValidationMessageFor(t => t.Municipio, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="UF">UF</label>
+                    @Html.DropDownListFor(
+                        t => t.UF,
+                        new SelectList(
+                            new[]
+                            {
+                                new { Value = "", Text = "[Selecione o estado]" },
+                                new { Value = "AC", Text = "Acre" },
+                                new { Value = "AL", Text = "Alagoas" },
+                                new { Value = "AP", Text = "Amapá" },
+                                new { Value = "AM", Text = "Amazonas" },
+                                new { Value = "BA", Text = "Bahia" },
+                                new { Value = "CE", Text = "Ceará" },
+                                new { Value = "DF", Text = "Distrito Federal" },
+                                new { Value = "ES", Text = "Espírito Santo" },
+                                new { Value = "GO", Text = "Goiás" },
+                                new { Value = "MA", Text = "Maranhão" },
+                                new { Value = "MT", Text = "Mato Grosso" },
+                                new { Value = "MS", Text = "Mato Grosso do Sul" },
+                                new { Value = "MG", Text = "Minas Gerais" },
+                                new { Value = "PA", Text = "Pará" },
+                                new { Value = "PB", Text = "Paraíba" },
+                                new { Value = "PR", Text = "Paraná" },
+                                new { Value = "PE", Text = "Pernambuco" },
+                                new { Value = "PI", Text = "Piauí" },
+                                new { Value = "RJ", Text = "Rio de Janeiro" },
+                                new { Value = "RN", Text = "Rio Grande do Norte" },
+                                new { Value = "RS", Text = "Rio Grande do Sul" },
+                                new { Value = "RO", Text = "Rondônia" },
+                                new { Value = "RR", Text = "Roraima" },
+                                new { Value = "SC", Text = "Santa Catarina" },
+                                new { Value = "SP", Text = "São Paulo" },
+                                new { Value = "SE", Text = "Sergipe" },
+                                new { Value = "TO", Text = "Tocantins" }
+                            },
+                            "Value",
+                            "Text"),
+                            new { @class = "form-control single-select", name = "UF" }
+                        )
+                    @Html.ValidationMessageFor(t => t.UF, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="cep">CEP</label>
+                    @Html.EditorFor(t => t.CEP, new { htmlAttributes = new { @class = "form-control", id = "cep", placeholder = "CEP" } })
+                    @Html.ValidationMessageFor(t => t.CEP, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    @Html.ActionLink("Continuar Comprando", "Carrossel", "Pedido", null, new { @class = "btn btn-success" })
+                </div>
+                <div class="form-group">
+                    <button type="submit"
+                            class="btn btn-success">
+                        Finalizar Pedido
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F614164-4170-47A6-9FFD-F653188B4753}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CasaDoCodigo</RootNamespace>
+    <AssemblyName>CasaDoCodigo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.2.0\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Extensions.Caching.Abstractions.2.0.2\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Extensions.Caching.Memory.2.0.2\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Extensions.Configuration.Abstractions.2.0.2\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Extensions.DependencyInjection.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Extensions.Logging.2.0.2\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Extensions.Logging.Abstractions.2.0.2\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Extensions.Options.2.0.2\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.Extensions.Primitives.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.1.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Remotion.Linq.2.1.1\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.ComponentModel.Annotations.4.4.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Interactive.Async, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Interactive.Async.3.1.1\lib\net46\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.5\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.5\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.2.0\lib\net45\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.0.3.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.2.0\lib\net45\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.2.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.2.0\lib\net45\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.2.0\lib\net45\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.2.0\lib\net45\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc5, Version=1.3.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.Mvc5.1.3.0\lib\net45\Unity.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.2.0\lib\net45\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.2.0\lib\net45\Unity.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationContext.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PedidoController.cs" />
+    <Compile Include="Controllers\ValidateHttpAntiForgeryTokenAttribute.cs" />
+    <Compile Include="DataService.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IDataService.cs" />
+    <Compile Include="Migrations\201805111444063_Inicial.cs" />
+    <Compile Include="Migrations\201805111444063_Inicial.Designer.cs">
+      <DependentUpon>201805111444063_Inicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ErrorViewModel.cs" />
+    <Compile Include="Models\modelo.cs" />
+    <Compile Include="Models\UpdateQuantidadeResponse.cs" />
+    <Compile Include="Models\ViewModels\CarrinhoViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\CadastroRepository.cs" />
+    <Compile Include="Repositories\IProdutoRepository.cs" />
+    <Compile Include="Repositories\ItemPedidoRepository.cs" />
+    <Compile Include="Repositories\PedidoRepository.cs" />
+    <Compile Include="Repositories\ProdutoRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\produtos\large_001.jpg" />
+    <Content Include="Content\images\produtos\large_002.jpg" />
+    <Content Include="Content\images\produtos\large_003.jpg" />
+    <Content Include="Content\images\produtos\large_004.jpg" />
+    <Content Include="Content\images\produtos\large_005.jpg" />
+    <Content Include="Content\images\produtos\large_006.jpg" />
+    <Content Include="Content\images\produtos\large_007.jpg" />
+    <Content Include="Content\images\produtos\large_008.jpg" />
+    <Content Include="Content\images\produtos\large_009.jpg" />
+    <Content Include="Content\images\produtos\large_010.jpg" />
+    <Content Include="Content\images\produtos\large_011.jpg" />
+    <Content Include="Content\images\produtos\large_012.jpg" />
+    <Content Include="Content\images\produtos\large_013.jpg" />
+    <Content Include="Content\images\produtos\large_014.jpg" />
+    <Content Include="Content\images\produtos\large_015.jpg" />
+    <Content Include="Content\images\produtos\large_016.jpg" />
+    <Content Include="Content\images\produtos\large_017.jpg" />
+    <Content Include="Content\images\produtos\large_018.jpg" />
+    <Content Include="Content\images\produtos\large_019.jpg" />
+    <Content Include="Content\images\produtos\large_020.jpg" />
+    <Content Include="Content\images\produtos\large_021.jpg" />
+    <Content Include="Content\images\produtos\large_022.jpg" />
+    <Content Include="Content\images\produtos\large_023.jpg" />
+    <Content Include="Content\images\produtos\large_024.jpg" />
+    <Content Include="Content\images\produtos\large_025.jpg" />
+    <Content Include="Content\images\produtos\large_026.jpg" />
+    <Content Include="Content\images\produtos\large_027.jpg" />
+    <Content Include="Content\images\produtos\large_028.jpg" />
+    <Content Include="Content\images\produtos\large_029.jpg" />
+    <Content Include="Content\images\produtos\large_030.jpg" />
+    <Content Include="Content\images\produtos\large_031.jpg" />
+    <Content Include="Content\images\produtos\large_032.jpg" />
+    <Content Include="Content\images\produtos\large_033.jpg" />
+    <Content Include="Content\images\produtos\large_034.jpg" />
+    <Content Include="Content\images\produtos\large_035.jpg" />
+    <Content Include="Content\images\produtos\large_036.jpg" />
+    <Content Include="Content\images\produtos\large_037.jpg" />
+    <Content Include="Content\images\produtos\large_038.jpg" />
+    <Content Include="Content\images\produtos\large_039.jpg" />
+    <Content Include="Content\images\produtos\large_040.jpg" />
+    <Content Include="Content\images\produtos\large_041.jpg" />
+    <Content Include="Content\images\produtos\large_042.jpg" />
+    <Content Include="Content\images\produtos\large_043.jpg" />
+    <Content Include="Content\images\produtos\large_044.jpg" />
+    <Content Include="Content\images\produtos\large_045.jpg" />
+    <Content Include="Content\images\produtos\large_046.jpg" />
+    <Content Include="Content\images\produtos\large_047.jpg" />
+    <Content Include="Content\images\produtos\large_048.jpg" />
+    <Content Include="Content\images\produtos\large_049.jpg" />
+    <Content Include="Content\images\produtos\large_050.jpg" />
+    <Content Include="Content\images\produtos\large_051.jpg" />
+    <Content Include="Content\images\produtos\large_052.jpg" />
+    <Content Include="Content\images\produtos\large_053.jpg" />
+    <Content Include="Content\images\produtos\large_054.jpg" />
+    <Content Include="Content\images\produtos\large_055.jpg" />
+    <Content Include="Content\images\produtos\large_056.jpg" />
+    <Content Include="Content\images\produtos\large_057.jpg" />
+    <Content Include="Content\images\produtos\large_058.jpg" />
+    <Content Include="Content\images\produtos\large_059.jpg" />
+    <Content Include="Content\images\produtos\large_060.jpg" />
+    <Content Include="Content\images\produtos\large_061.jpg" />
+    <Content Include="Content\images\produtos\large_062.jpg" />
+    <Content Include="Content\images\produtos\large_063.jpg" />
+    <Content Include="Content\images\produtos\large_064.jpg" />
+    <Content Include="Content\images\produtos\large_065.jpg" />
+    <Content Include="Content\images\produtos\large_066.jpg" />
+    <Content Include="Content\images\produtos\large_067.jpg" />
+    <Content Include="Content\images\produtos\large_068.jpg" />
+    <Content Include="Content\images\produtos\large_069.jpg" />
+    <Content Include="Content\images\produtos\large_070.jpg" />
+    <Content Include="Content\images\produtos\large_071.jpg" />
+    <Content Include="Content\images\produtos\large_072.jpg" />
+    <Content Include="Content\images\produtos\large_073.jpg" />
+    <Content Include="Content\images\produtos\large_074.jpg" />
+    <Content Include="Content\images\produtos\large_075.jpg" />
+    <Content Include="Content\images\produtos\large_076.jpg" />
+    <Content Include="Content\images\produtos\large_077.jpg" />
+    <Content Include="Content\images\produtos\large_078.jpg" />
+    <Content Include="Content\images\produtos\large_079.jpg" />
+    <Content Include="Content\images\produtos\large_080.jpg" />
+    <Content Include="Content\images\produtos\large_081.jpg" />
+    <Content Include="Content\images\produtos\large_082.jpg" />
+    <Content Include="Content\images\produtos\large_083.jpg" />
+    <Content Include="Content\images\produtos\large_084.jpg" />
+    <Content Include="Content\images\produtos\large_085.jpg" />
+    <Content Include="Content\images\produtos\large_086.jpg" />
+    <Content Include="Content\images\produtos\large_087.jpg" />
+    <Content Include="Content\images\produtos\large_088.jpg" />
+    <Content Include="Content\images\produtos\large_089.jpg" />
+    <Content Include="Content\images\produtos\large_090.jpg" />
+    <Content Include="Content\images\produtos\large_091.jpg" />
+    <Content Include="Content\images\produtos\large_092.jpg" />
+    <Content Include="Content\images\produtos\large_093.jpg" />
+    <Content Include="Content\images\produtos\large_094.jpg" />
+    <Content Include="Content\images\produtos\large_095.jpg" />
+    <Content Include="Content\images\produtos\large_096.jpg" />
+    <Content Include="Content\images\produtos\large_097.jpg" />
+    <Content Include="Content\images\produtos\large_098.jpg" />
+    <Content Include="Content\images\produtos\large_099.jpg" />
+    <Content Include="Content\images\produtos\large_100.jpg" />
+    <Content Include="Content\images\produtos\large_101.jpg" />
+    <Content Include="Content\images\produtos\large_102.jpg" />
+    <Content Include="Content\images\produtos\large_103.jpg" />
+    <Content Include="Content\images\produtos\large_104.jpg" />
+    <Content Include="Content\images\produtos\large_105.jpg" />
+    <Content Include="Content\images\produtos\large_106.jpg" />
+    <Content Include="Content\images\produtos\large_107.jpg" />
+    <Content Include="Content\images\produtos\large_108.jpg" />
+    <Content Include="Content\images\produtos\large_109.jpg" />
+    <Content Include="Content\images\produtos\large_110.jpg" />
+    <Content Include="Content\images\produtos\large_111.jpg" />
+    <Content Include="Content\images\produtos\large_112.jpg" />
+    <Content Include="Content\images\produtos\large_113.jpg" />
+    <Content Include="Content\images\produtos\large_114.jpg" />
+    <Content Include="Content\images\produtos\large_115.jpg" />
+    <Content Include="Content\images\produtos\large_116.jpg" />
+    <Content Include="Content\images\produtos\large_117.jpg" />
+    <Content Include="Content\images\produtos\large_118.jpg" />
+    <Content Include="Content\images\produtos\large_119.jpg" />
+    <Content Include="Content\images\produtos\large_120.jpg" />
+    <Content Include="Content\images\produtos\large_121.jpg" />
+    <Content Include="Content\images\produtos\large_122.jpg" />
+    <Content Include="Content\images\produtos\large_123.jpg" />
+    <Content Include="Content\images\produtos\large_124.jpg" />
+    <Content Include="Content\images\produtos\large_125.jpg" />
+    <Content Include="Content\images\produtos\large_126.jpg" />
+    <Content Include="Content\images\produtos\large_127.jpg" />
+    <Content Include="Content\images\produtos\large_128.jpg" />
+    <Content Include="Content\images\produtos\large_129.jpg" />
+    <Content Include="Content\images\produtos\large_130.jpg" />
+    <Content Include="Content\images\produtos\large_131.jpg" />
+    <Content Include="Content\images\produtos\large_132.jpg" />
+    <Content Include="Content\images\produtos\large_133.jpg" />
+    <Content Include="Content\images\produtos\large_134.jpg" />
+    <Content Include="Content\images\produtos\large_135.jpg" />
+    <Content Include="Content\images\produtos\large_136.jpg" />
+    <Content Include="Content\images\produtos\large_137.jpg" />
+    <Content Include="Content\images\produtos\large_138.jpg" />
+    <Content Include="Content\images\produtos\large_139.jpg" />
+    <Content Include="Content\images\produtos\large_140.jpg" />
+    <Content Include="Content\images\produtos\large_141.jpg" />
+    <Content Include="Content\images\produtos\large_142.jpg" />
+    <Content Include="Content\images\produtos\large_143.jpg" />
+    <Content Include="Content\images\produtos\large_144.jpg" />
+    <Content Include="Content\images\produtos\large_145.jpg" />
+    <Content Include="Content\images\produtos\large_146.jpg" />
+    <Content Include="Content\images\produtos\large_147.jpg" />
+    <Content Include="Content\images\produtos\large_148.jpg" />
+    <Content Include="Content\images\produtos\large_149.jpg" />
+    <Content Include="Content\images\produtos\large_150.jpg" />
+    <Content Include="Content\images\produtos\large_151.jpg" />
+    <Content Include="Content\images\produtos\large_152.jpg" />
+    <Content Include="Content\images\produtos\large_153.jpg" />
+    <Content Include="Content\images\produtos\large_154.jpg" />
+    <Content Include="Content\images\produtos\large_155.jpg" />
+    <Content Include="Content\images\produtos\large_156.jpg" />
+    <Content Include="Content\images\produtos\large_157.jpg" />
+    <Content Include="Content\images\produtos\large_158.jpg" />
+    <Content Include="Content\images\produtos\large_159.jpg" />
+    <Content Include="Content\images\produtos\large_160.jpg" />
+    <Content Include="Content\images\produtos\large_161.jpg" />
+    <Content Include="Content\images\produtos\large_162.jpg" />
+    <Content Include="Content\images\produtos\large_163.jpg" />
+    <Content Include="Content\images\produtos\large_164.jpg" />
+    <Content Include="Content\images\produtos\large_165.jpg" />
+    <Content Include="Content\images\produtos\large_166.jpg" />
+    <Content Include="Content\images\produtos\large_167.jpg" />
+    <Content Include="Content\images\produtos\large_168.jpg" />
+    <Content Include="Content\images\produtos\large_169.jpg" />
+    <Content Include="Content\images\produtos\large_170.jpg" />
+    <Content Include="Content\images\produtos\large_171.jpg" />
+    <Content Include="Content\images\produtos\large_172.jpg" />
+    <Content Include="Content\images\produtos\large_173.jpg" />
+    <Content Include="Content\images\produtos\large_174.jpg" />
+    <Content Include="Content\images\produtos\large_175.jpg" />
+    <Content Include="Content\images\produtos\large_176.jpg" />
+    <Content Include="Content\images\produtos\large_177.jpg" />
+    <Content Include="Content\images\produtos\large_178.jpg" />
+    <Content Include="Content\images\produtos\large_179.jpg" />
+    <Content Include="Content\images\produtos\large_180.jpg" />
+    <Content Include="Content\images\produtos\large_181.jpg" />
+    <Content Include="Content\images\produtos\large_182.jpg" />
+    <Content Include="Content\images\produtos\large_183.jpg" />
+    <Content Include="Content\images\produtos\large_184.jpg" />
+    <Content Include="Content\images\produtos\large_185.jpg" />
+    <Content Include="Content\images\produtos\large_186.jpg" />
+    <Content Include="Content\images\produtos\large_187.jpg" />
+    <Content Include="Content\images\produtos\large_188.jpg" />
+    <Content Include="Content\images\produtos\large_189.jpg" />
+    <Content Include="Content\images\produtos\large_190.jpg" />
+    <Content Include="Content\images\produtos\large_191.jpg" />
+    <Content Include="Content\images\produtos\large_192.jpg" />
+    <Content Include="Content\images\produtos\livros.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\livros.json" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\carrinho.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Pedido\Cadastro.cshtml" />
+    <Content Include="Views\Pedido\Carrinho.cshtml" />
+    <Content Include="Views\Pedido\Carrossel.cshtml" />
+    <Content Include="Views\Pedido\Resumo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805111444063_Inicial.resx">
+      <DependentUpon>201805111444063_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53286</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50000/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
