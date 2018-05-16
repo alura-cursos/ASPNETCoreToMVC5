@@ -45,6 +45,11 @@ namespace CasaDoCodigo.Models
         {
         }
 
+        public Cadastro(int id)
+        {
+            this.Id = id;
+        }
+
         public Pedido Pedido { get; set; }
 
         [MinLength(5, ErrorMessage = "Nome deve ter no mínimo 5 caracteres")]

@@ -24,10 +24,7 @@ namespace CasaDoCodigo.Repositories
 
             if (cadastroDB == null)
             {
-                cadastroDB = new Cadastro
-                {
-                    Id = cadastroId
-                };
+                cadastroDB = new Cadastro(cadastroId);
                 dbSet.Add(cadastroDB);
             }
 
