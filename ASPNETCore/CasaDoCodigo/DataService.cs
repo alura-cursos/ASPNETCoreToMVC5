@@ -7,6 +7,11 @@ using System.IO;
 
 namespace CasaDoCodigo
 {
+    interface IDataService
+    {
+        void InicializaDB();
+    }
+
     class DataService : IDataService
     {
         private readonly ApplicationContext contexto;

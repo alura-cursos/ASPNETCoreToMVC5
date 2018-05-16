@@ -240,7 +240,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="IDataService.cs" />
     <Compile Include="Migrations\201805111444063_Inicial.cs" />
     <Compile Include="Migrations\201805111444063_Inicial.Designer.cs">
       <DependentUpon>201805111444063_Inicial.cs</DependentUpon>
