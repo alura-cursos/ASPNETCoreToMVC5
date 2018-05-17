@@ -1,8 +1,10 @@
 using System;
+using System.Web;
 using System.Web.Mvc;
 using CasaDoCodigo.Repositories;
 using Microsoft.Practices.Unity;
 using Unity;
+using Unity.Injection;
 using Unity.Mvc5;
 
 namespace CasaDoCodigo
@@ -24,6 +26,9 @@ namespace CasaDoCodigo
             container.RegisterType<IPedidoRepository, PedidoRepository>();
             container.RegisterType<ICadastroRepository, CadastroRepository>();
             container.RegisterType<IItemPedidoRepository, ItemPedidoRepository>();
+            container.RegisterType<HttpSessionStateBase>(
+                new InjectionFactory(x =>
+                    new HttpSessionStateWrapper(System.Web.HttpContext.Current.Session)));
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

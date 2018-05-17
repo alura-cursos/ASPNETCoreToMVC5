@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace CasaDoCodigo.Repositories
 {
@@ -18,13 +19,16 @@ namespace CasaDoCodigo.Repositories
 
     public class PedidoRepository : BaseRepository<Pedido>, IPedidoRepository
     {
+        private readonly HttpSessionStateBase httpContext;
         private readonly IItemPedidoRepository itemPedidoRepository;
         private readonly ICadastroRepository cadastroRepository;
 
         public PedidoRepository(ApplicationContext contexto,
+            HttpSessionStateBase httpContext,
             IItemPedidoRepository itemPedidoRepository,
             ICadastroRepository cadastroRepository) : base(contexto)
         {
+            this.httpContext = httpContext;
             this.itemPedidoRepository = itemPedidoRepository;
             this.cadastroRepository = cadastroRepository;
         }
@@ -80,7 +84,7 @@ namespace CasaDoCodigo.Repositories
 
         private int? GetPedidoId()
         {
-            var value = System.Web.HttpContext.Current.Session["pedidoId"];
+            var value = httpContext["pedidoId"];
             if (value == null)
             {
                 return null;
@@ -90,7 +94,7 @@ namespace CasaDoCodigo.Repositories
 
         private void SetPedidoId(int pedidoId)
         {
-            System.Web.HttpContext.Current.Session["pedidoId"] = pedidoId;
+            httpContext["pedidoId"] = pedidoId;
         }
 
         public UpdateQuantidadeResponse UpdateQuantidade(ItemPedido itemPedido)
